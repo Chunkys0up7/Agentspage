@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding AI Agents - Interactive Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">AI Agents Guide</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Agent Types</a></li>
+                <li><a href="tools.html">Tools & Frameworks</a></li>
+                <li><a href="guardrails.html">Guardrails & Safety</a></li>
+                <li><a href="behind-scenes.html">Behind the Scenes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in">What is an AI Agent?</h1>
+            <p class="subtitle fade-in-delay">Think of AI agents as smart digital assistants that can perceive, think,
+                and act on their own</p>
+
+            <div class="core-concept">
+                <div class="concept-flow">
+                    <div class="flow-step">
+                        <div class="flow-icon">👀</div>
+                        <h3>Perceive</h3>
+                        <p>Takes in information from the world</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">🧠</div>
+                        <h3>Think</h3>
+                        <p>Processes and reasons about what to do</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">⚡</div>
+                        <h3>Act</h3>
+                        <p>Takes action to achieve a goal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <h2>The Big Picture</h2>
+                <p>Unlike a regular program that just follows instructions step-by-step, an AI agent can perceive,
+                    reason, and act. But to build them safely and effectively, we need three pillars:</p>
+                <ul class="benefit-list">
+                    <li><span class="icon">🤖</span> <strong>Agents:</strong> The autonomous decision makers (You are
+                        here)</li>
+                    <li><span class="icon">🛠️</span> <strong>Tools:</strong> The frameworks that build them (Page 2)
+                    </li>
+                    <li><span class="icon">🛡️</span> <strong>Guardrails:</strong> The safety checks that control them
+                        (Page 3)</li>
+                </ul>
+                <p style="margin-top: 1.5rem; color: var(--text-light);">Let's start by understanding the different
+                    <em>types</em> of agents, from simple reflex bots to complex learning systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agent Types Section -->
+    <section class="agent-types">
+        <div class="container">
+            <h2 class="section-title">Types of AI Agents</h2>
+            <p class="section-subtitle">Each type has different capabilities - let's explore them interactively!</p>
+
+            <div class="agent-grid">
+                <!-- Simple Reflex Agent -->
+                <div class="agent-card" data-agent="reflex">
+                    <div class="card-header">
+                        <div class="agent-icon">🔵</div>
+                        <h3>Simple Reflex Agent</h3>
+                        <span class="difficulty-badge beginner">Beginner</span>
+                    </div>
+                    <p class="agent-description">
+                        Like a thermostat: "If room is cold, turn on heat." It reacts to what's happening right now
+                        using simple rules.
+                    </p>
+                    <div class="key-traits">
+                        <div class="trait">
+                            <span class="trait-label">Memory:</span> None - lives in the moment
+                        </div>
+                        <div class="trait">
+                            <span class="trait-label">Best for:</span> Quick, simple decisions
+                        </div>
+                    </div>
+                    <button class="demo-btn" onclick="openDemo('reflex')">Watch Demo</button>
+                </div>
+
+                <!-- Model-Based Agent -->
+                <div class="agent-card" data-agent="model">
+                    <div class="card-header">
+                        <div class="agent-icon">🟢</div>
+                        <h3>Model-Based Agent</h3>
+                        <span class="difficulty-badge intermediate">Intermediate</span>
+                    </div>
+                    <p class="agent-description">
+                        Like a personal assistant who remembers your conversation. It keeps track of context to make
+                        smarter decisions.
+                    </p>
+                    <div class="key-traits">
+                        <div class="trait">
+                            <span class="trait-label">Memory:</span> Remembers recent context
+                        </div>
+                        <div class="trait">
+                            <span class="trait-label">Best for:</span> Customer support, chatbots
+                        </div>
+                    </div>
+                    <button class="demo-btn" onclick="openDemo('model')">Watch Demo</button>
+                </div>
+
+                <!-- Goal-Based Agent -->
+                <div class="agent-card" data-agent="goal">
+                    <div class="card-header">
+                        <div class="agent-icon">🎯</div>
+                        <h3>Goal-Based Agent</h3>
+                        <span class="difficulty-badge intermediate">Intermediate</span>
+                    </div>
+                    <p class="agent-description">
+                        Like a GPS navigator: knows where you want to go and figures out the steps to get there.
+                    </p>
+                    <div class="key-traits">
+                        <div class="trait">
+                            <span class="trait-label">Memory:</span> Tracks progress toward goals
+                        </div>
+                        <div class="trait">
+                            <span class="trait-label">Best for:</span> Task planning, navigation
+                        </div>
+                    </div>
+                    <button class="demo-btn" onclick="openDemo('goal')">Watch Demo</button>
+                </div>
+
+                <!-- Utility-Based Agent -->
+                <div class="agent-card" data-agent="utility">
+                    <div class="card-header">
+                        <div class="agent-icon">⚖️</div>
+                        <h3>Utility-Based Agent</h3>
+                        <span class="difficulty-badge advanced">Advanced</span>
+                    </div>
+                    <p class="agent-description">
+                        Like choosing the best flight: weighs multiple factors (price, time, comfort) to find the
+                        optimal choice.
+                    </p>
+                    <div class="key-traits">
+                        <div class="trait">
+                            <span class="trait-label">Memory:</span> Evaluates trade-offs
+                        </div>
+                        <div class="trait">
+                            <span class="trait-label">Best for:</span> Decision optimization
+                        </div>
+                    </div>
+                    <button class="demo-btn" onclick="openDemo('utility')">Watch Demo</button>
+                </div>
+
+                <!-- Learning Agent -->
+                <div class="agent-card" data-agent="learning">
+                    <div class="card-header">
+                        <div class="agent-icon">📈</div>
+                        <h3>Learning Agent</h3>
+                        <span class="difficulty-badge advanced">Advanced</span>
+                    </div>
+                    <p class="agent-description">
+                        Like a student who gets better with practice: learns from feedback and improves its performance
+                        over time.
+                    </p>
+                    <div class="key-traits">
+                        <div class="trait">
+                            <span class="trait-label">Memory:</span> Learns from experience
+                        </div>
+                        <div class="trait">
+                            <span class="trait-label">Best for:</span> Personalization, recommendations
+                        </div>
+                    </div>
+                    <button class="demo-btn" onclick="openDemo('learning')">Watch Demo</button>
+                </div>
+
+                <!-- Knowledge Retrieval Agent -->
+                <div class="agent-card" data-agent="knowledge">
+                    <div class="card-header">
+                        <div class="agent-icon">📚</div>
+                        <h3>Knowledge Retrieval Agent</h3>
+                        <span class="difficulty-badge advanced">Advanced</span>
+                    </div>
+                    <p class="agent-description">
+                        Like a librarian who finds relevant books and summarizes them: searches through information to
+                        answer questions accurately.
+                    </p>
+                    <div class="key-traits">
+                        <div class="trait">
+                            <span class="trait-label">Memory:</span> Accesses knowledge bases
+                        </div>
+                        <div class="trait">
+                            <span class="trait-label">Best for:</span> Q&A, research assistance
+                        </div>
+                    </div>
+                    <button class="demo-btn" onclick="openDemo('knowledge')">Watch Demo</button>
+                </div>
+
+                <!-- Multi-Agent System -->
+                <div class="agent-card featured" data-agent="multi">
+                    <div class="card-header">
+                        <div class="agent-icon">🤝</div>
+                        <h3>Multi-Agent System</h3>
+                        <span class="difficulty-badge expert">Expert</span>
+                    </div>
+                    <p class="agent-description">
+                        Like a team working together: multiple specialized agents collaborate, each handling what they
+                        do best.
+                    </p>
+                    <div class="key-traits">
+                        <div class="trait">
+                            <span class="trait-label">Memory:</span> Shared coordination
+                        </div>
+                        <div class="trait">
+                            <span class="trait-label">Best for:</span> Complex workflows
+                        </div>
+                    </div>
+                    <button class="demo-btn" onclick="openDemo('multi')">Watch Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 class="section-title">See the Difference</h2>
+            <p class="section-subtitle">Watch how different agents handle the same challenge</p>
+
+            <div class="comparison-demo">
+                <div class="scenario-selector">
+                    <button class="scenario-btn active" onclick="loadScenario('email')">Email Sorting</button>
+                    <button class="scenario-btn" onclick="loadScenario('travel')">Travel Planning</button>
+                    <button class="scenario-btn" onclick="loadScenario('support')">Customer Support</button>
+                </div>
+
+                <div id="comparison-content" class="comparison-content">
+                    <!-- Dynamic content loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Modal -->
+    <div id="demo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDemo()">&times;</span>
+            <div id="demo-container">
+                <!-- Dynamic demo content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Conclusion Section -->
+    <section class="conclusion-section">
+        <div class="container">
+            <h2>Why This Matters</h2>
+            <div class="takeaway-grid">
+                <div class="takeaway-card">
+                    <div class="takeaway-icon">💼</div>
+                    <h3>For Business</h3>
+                    <p>AI agents can automate complex workflows, from customer service to data analysis, freeing humans
+                        for creative work.</p>
+                </div>
+                <div class="takeaway-card">
+                    <div class="takeaway-icon">🚀</div>
+                    <h3>The Future</h3>
+                    <p>Multi-agent systems are becoming the standard - teams of specialized AI working together like
+                        human teams.</p>
+                </div>
+                <div class="takeaway-card">
+                    <div class="takeaway-icon">🎓</div>
+                    <h3>Getting Started</h3>
+                    <p>Start simple with reflex or model-based agents, then scale to more complex systems as needs grow.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="next-steps">
+                <h3>Ready to Learn More?</h3>
+                <p>Now that you understand the different types of AI agents, let's explore the tools and frameworks that
+                    bring them to life.</p>
+                <a href="tools.html" class="next-btn">Explore Tools & Frameworks →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Navigation -->
+    <nav class="page-nav">
+        <div class="container">
+            <div class="page-nav-content">
+                <span class="nav-disabled">← Previous</span>
+                <a href="index.html" class="nav-home">Home</a>
+                <a href="tools.html" class="nav-next">Next: Tools & Frameworks →</a>
+            </div>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

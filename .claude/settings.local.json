@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"F:\\Projects\\AgentsPage\\index.html\")",
+      "Bash(start \"\" \"F:\\Projects\\AgentsPage\\guardrails.html\")",
+      "Bash(start \"\" \"F:\\Projects\\AgentsPage\\behind-scenes.html\")"
+    ]
+  }
+}

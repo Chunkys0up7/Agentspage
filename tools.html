@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Tools & Frameworks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">AI Agents Guide</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Agent Types</a></li>
+                <li><a href="tools.html" class="active">Tools & Frameworks</a></li>
+                <li><a href="guardrails.html">Guardrails & Safety</a></li>
+                <li><a href="behind-scenes.html">Behind the Scenes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in">Tools & Frameworks</h1>
+            <p class="subtitle fade-in-delay">The building blocks that power AI agents in production</p>
+        </div>
+    </section>
+
+    <!-- Tools Overview Section -->
+    <section class="tools-overview">
+        <div class="container">
+            <h2 class="section-title">The AI Agent Stack</h2>
+            <p class="section-subtitle">From orchestration to communication, these tools make agents possible</p>
+
+            <div class="stack-diagram visual-stack">
+                <div class="stack-layer application-layer">
+                    <div class="layer-content">
+                        <h3>Application Layer</h3>
+                        <p>User Interface & Interactions</p>
+                    </div>
+                </div>
+                <!-- Connected via CSS -->
+                <div class="stack-layer orchestration-layer">
+                    <div class="layer-content">
+                        <h3>Orchestration Layer</h3>
+                        <div class="tool-badges">
+                            <span class="badge">LangChain</span>
+                            <span class="badge">LlamaIndex</span>
+                            <span class="badge">AutoGen</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Connected via CSS -->
+                <div class="stack-layer data-layer">
+                    <div class="layer-content">
+                        <h3>Data & Tools Layer</h3>
+                        <div class="tool-badges">
+                            <span class="badge mcp">Model Context Protocol</span>
+                            <span class="badge">APIs</span>
+                            <span class="badge">Databases</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Connected via CSS -->
+                <div class="stack-layer model-layer">
+                    <div class="layer-content">
+                        <h3>Foundation Model Layer</h3>
+                        <div class="tool-badges">
+                            <span class="badge">GPT-4</span>
+                            <span class="badge">Claude 3.5</span>
+                            <span class="badge">Gemini</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Tools Section -->
+    <section class="key-tools">
+        <div class="container">
+            <h2 class="section-title">Essential Tools Explained</h2>
+
+            <div class="tools-grid">
+                <!-- LangChain -->
+                <div class="tool-card featured">
+                    <div class="tool-header">
+                        <div class="tool-category">Orchestration Framework</div>
+                        <h3>LangChain</h3>
+                    </div>
+                    <div class="tool-description">
+                        <p><strong>What it does:</strong> A framework for building applications powered by language
+                            models. It provides the "chain" of components to create complex agent workflows.</p>
+
+                        <div class="tool-features">
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Chains:</strong> Connect multiple steps (prompt → model → output → next
+                                    action)</li>
+                                <li><strong>Agents:</strong> Let models decide which tools to use and when</li>
+                                <li><strong>Memory:</strong> Remember conversation context across turns</li>
+                                <li><strong>Tools:</strong> Pre-built integrations (search, databases, APIs)</li>
+                            </ul>
+                        </div>
+
+                        <div class="use-case">
+                            <h4>Real-World Example:</h4>
+                            <p>A customer support agent that:</p>
+                            <ol>
+                                <li>Receives a question about an order</li>
+                                <li>Uses LangChain to search the order database (tool)</li>
+                                <li>Passes results to the LLM</li>
+                                <li>LLM generates a personalized response</li>
+                                <li>All context is saved for follow-up questions (memory)</li>
+                            </ol>
+                        </div>
+
+                        <div class="tool-status">
+                            <span class="status-label">Maturity:</span> Production-ready
+                            <span class="status-label">Best for:</span> Complex multi-step workflows
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model Context Protocol -->
+                <div class="tool-card featured">
+                    <div class="tool-header">
+                        <div class="tool-category">Communication Protocol</div>
+                        <h3>Model Context Protocol (MCP)</h3>
+                    </div>
+                    <div class="tool-description">
+                        <p><strong>What it does:</strong> A standardized way for AI models to connect with external data
+                            sources and tools. Think of it as "USB for AI" - one standard connection for everything.</p>
+
+                        <div class="tool-features">
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Universal Interface:</strong> One protocol to connect to databases, APIs,
+                                    files, etc.</li>
+                                <li><strong>Secure Context Sharing:</strong> Controlled access to data sources</li>
+                                <li><strong>Tool Discovery:</strong> Agents can automatically find available tools</li>
+                                <li><strong>Bi-directional:</strong> Data flows both ways (read & write)</li>
+                            </ul>
+                        </div>
+
+                        <div class="use-case">
+                            <h4>Real-World Example:</h4>
+                            <p>Instead of building custom integrations for each data source:</p>
+                            <div class="comparison-box">
+                                <div class="old-way">
+                                    <strong>❌ Old Way:</strong><br>
+                                    Agent → Custom connector A → Database<br>
+                                    Agent → Custom connector B → File system<br>
+                                    Agent → Custom connector C → API<br>
+                                    <em>(Each needs different code)</em>
+                                </div>
+                                <div class="new-way">
+                                    <strong>✓ With MCP:</strong><br>
+                                    Agent → MCP → Any data source<br>
+                                    <em>(One standard interface)</em>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tool-status">
+                            <span class="status-label">Maturity:</span> Emerging standard
+                            <span class="status-label">Best for:</span> Connecting agents to enterprise data
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LlamaIndex -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-category">Data Framework</div>
+                        <h3>LlamaIndex</h3>
+                    </div>
+                    <div class="tool-description">
+                        <p><strong>What it does:</strong> Specialized in connecting LLMs to private/custom data. Excels
+                            at building Knowledge Retrieval Agents (RAG systems).</p>
+
+                        <div class="tool-features">
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Data Ingestion:</strong> Load documents, PDFs, databases, APIs</li>
+                                <li><strong>Indexing:</strong> Create searchable indexes of your data</li>
+                                <li><strong>Querying:</strong> Semantic search across documents</li>
+                                <li><strong>RAG Pipelines:</strong> Retrieve relevant docs, then generate answers (<abbr
+                                        title="Retrieval-Augmented Generation">RAG</abbr>)</li>
+                            </ul>
+                        </div>
+
+                        <div class="use-case">
+                            <h4>Real-World Example:</h4>
+                            <p>Company documentation Q&A agent:</p>
+                            <ol>
+                                <li>LlamaIndex ingests 1,000 company policy documents</li>
+                                <li>Creates searchable index</li>
+                                <li>Employee asks: "What's our remote work policy?"</li>
+                                <li>LlamaIndex finds 3 relevant policy docs</li>
+                                <li>LLM reads those docs and answers the question</li>
+                            </ol>
+                        </div>
+
+                        <div class="tool-status">
+                            <span class="status-label">Best for:</span> Document Q&A, knowledge bases
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AutoGen -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-category">Multi-Agent Framework</div>
+                        <h3>AutoGen</h3>
+                    </div>
+                    <div class="tool-description">
+                        <p><strong>What it does:</strong> Microsoft's framework for building multi-agent systems where
+                            multiple AI agents collaborate and communicate.</p>
+
+                        <div class="tool-features">
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Agent Conversations:</strong> Agents can talk to each other</li>
+                                <li><strong>Role Assignment:</strong> Give each agent specific expertise</li>
+                                <li><strong>Human-in-the-Loop:</strong> Humans can join agent discussions</li>
+                                <li><strong>Code Execution:</strong> Agents can write and run code</li>
+                            </ul>
+                        </div>
+
+                        <div class="use-case">
+                            <h4>Real-World Example:</h4>
+                            <p>Software development team of agents:</p>
+                            <ul>
+                                <li><strong>Planner Agent:</strong> Breaks down requirements</li>
+                                <li><strong>Coder Agent:</strong> Writes the code</li>
+                                <li><strong>Reviewer Agent:</strong> Checks for bugs</li>
+                                <li><strong>Tester Agent:</strong> Runs tests</li>
+                                <li>Agents collaborate until code is working</li>
+                            </ul>
+                        </div>
+
+                        <div class="tool-status">
+                            <span class="status-label">Best for:</span> Complex tasks needing multiple specialized
+                            agents
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CrewAI -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-category">Multi-Agent Framework</div>
+                        <h3>CrewAI</h3>
+                    </div>
+                    <div class="tool-description">
+                        <p><strong>What it does:</strong> Framework for orchestrating teams of role-based AI agents
+                            working toward shared goals.</p>
+
+                        <div class="tool-features">
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>Role-Based Agents:</strong> Define agents by their job (researcher, writer,
+                                    analyst)</li>
+                                <li><strong>Task Assignment:</strong> Assign specific tasks to specific agents</li>
+                                <li><strong>Sequential & Parallel:</strong> Agents work in order or simultaneously</li>
+                                <li><strong>Result Aggregation:</strong> Combine outputs from multiple agents</li>
+                            </ul>
+                        </div>
+
+                        <div class="use-case">
+                            <h4>Real-World Example:</h4>
+                            <p>Content creation crew:</p>
+                            <ul>
+                                <li><strong>Researcher:</strong> Gathers facts and statistics</li>
+                                <li><strong>Writer:</strong> Creates the article</li>
+                                <li><strong>SEO Specialist:</strong> Optimizes for search</li>
+                                <li><strong>Editor:</strong> Reviews and polishes</li>
+                                <li>Each agent knows their role and contributes their part</li>
+                            </ul>
+                        </div>
+
+                        <div class="tool-status">
+                            <span class="status-label">Best for:</span> Workflow automation with specialized roles
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LangGraph -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-category">Workflow Engine</div>
+                        <h3>LangGraph</h3>
+                    </div>
+                    <div class="tool-description">
+                        <p><strong>What it does:</strong> Part of LangChain family. Builds agent workflows as graphs
+                            with nodes (steps) and edges (transitions).</p>
+
+                        <div class="tool-features">
+                            <h4>Key Capabilities:</h4>
+                            <ul>
+                                <li><strong>State Graphs:</strong> Define agent behavior as a flowchart</li>
+                                <li><strong>Conditional Routing:</strong> Agents choose different paths based on results
+                                </li>
+                                <li><strong>Cycles & Loops:</strong> Repeat steps until condition met</li>
+                                <li><strong>Checkpointing:</strong> Save state and resume later</li>
+                            </ul>
+                        </div>
+
+                        <div class="use-case">
+                            <h4>Real-World Example:</h4>
+                            <p>Research assistant workflow:</p>
+                            <ol>
+                                <li>Start → Understand query</li>
+                                <li>If complex → Break into sub-questions</li>
+                                <li>For each sub-question → Search web</li>
+                                <li>If results insufficient → Try different search</li>
+                                <li>Synthesize all results → Generate answer</li>
+                                <li>If user asks follow-up → Resume from saved state</li>
+                            </ol>
+                        </div>
+
+                        <div class="tool-status">
+                            <span class="status-label">Best for:</span> Complex workflows with branching logic
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How They Work Together -->
+    <section class="integration-section">
+        <div class="container">
+            <h2 class="section-title">How These Tools Work Together</h2>
+
+            <div class="integration-example">
+                <h3>Example: Enterprise Customer Support Agent</h3>
+
+                <div class="workflow-visual">
+                    <div class="flow-step">
+                        <div class="step-icon">🛡️</div>
+                        <h4>Input Guard</h4>
+                        <p>NeMo/LlamaGuard</p>
+                        <div class="step-arrow">→</div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="step-icon">🧠</div>
+                        <h4>LangChain</h4>
+                        <p>Plan & Orchestrate</p>
+                        <div class="step-arrow">→</div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="step-icon">🔌</div>
+                        <h4>MCP</h4>
+                        <p>Connect Data</p>
+                        <div class="step-arrow">→</div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="step-icon">🔍</div>
+                        <h4>LlamaIndex</h4>
+                        <p>Find Docs</p>
+                        <div class="step-arrow">→</div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="step-icon">🤖</div>
+                        <h4>Model</h4>
+                        <p>Generate</p>
+                        <div class="step-arrow">→</div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="step-icon">✅</div>
+                        <h4>Output Guard</h4>
+                        <p>Validator</p>
+                    </div>
+                </div>
+
+                <div class="integration-note">
+                    <strong>Result:</strong> A customer support agent that can access any data source (via MCP), search
+                    documentation (via LlamaIndex), follow complex workflows (via LangGraph), all orchestrated by
+                    LangChain.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Choosing the Right Tool -->
+    <section class="decision-guide">
+        <div class="container">
+            <h2 class="section-title">Which Tool Should You Use?</h2>
+
+            <div class="decision-grid">
+                <div class="decision-card">
+                    <h3>If you need to...</h3>
+                    <p class="decision-scenario">Build a chatbot that answers questions from your documentation</p>
+                    <div class="decision-recommendation">
+                        <strong>Use:</strong> LlamaIndex + LangChain
+                        <p>LlamaIndex for document indexing and retrieval, LangChain for conversation flow</p>
+                    </div>
+                </div>
+
+                <div class="decision-card">
+                    <h3>If you need to...</h3>
+                    <p class="decision-scenario">Connect an agent to multiple enterprise systems (databases, APIs,
+                        files)</p>
+                    <div class="decision-recommendation">
+                        <strong>Use:</strong> Model Context Protocol (MCP)
+                        <p>Provides standardized connections to all your data sources</p>
+                    </div>
+                </div>
+
+                <div class="decision-card">
+                    <h3>If you need to...</h3>
+                    <p class="decision-scenario">Build a team of agents that collaborate (researcher + writer + editor)
+                    </p>
+                    <div class="decision-recommendation">
+                        <strong>Use:</strong> CrewAI or AutoGen
+                        <p>Both specialize in multi-agent coordination with defined roles</p>
+                    </div>
+                </div>
+
+                <div class="decision-card">
+                    <h3>If you need to...</h3>
+                    <p class="decision-scenario">Create complex workflows with branching logic and loops</p>
+                    <div class="decision-recommendation">
+                        <strong>Use:</strong> LangGraph
+                        <p>Designed for state-based workflows with conditional paths</p>
+                    </div>
+                </div>
+
+                <div class="decision-card">
+                    <h3>If you need to...</h3>
+                    <p class="decision-scenario">General-purpose agent that uses tools and maintains context</p>
+                    <div class="decision-recommendation">
+                        <strong>Use:</strong> LangChain
+                        <p>The most versatile framework for general agent development</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion-section">
+        <div class="container">
+            <h2>The Ecosystem is Growing</h2>
+            <div class="conclusion-content">
+                <p>These tools represent the current state of AI agent development, but the field is evolving rapidly.
+                    New frameworks emerge regularly, and existing tools are constantly adding features.</p>
+
+                <div class="key-trends">
+                    <h3>Current Trends:</h3>
+                    <ul>
+                        <li><strong>Standardization:</strong> Protocols like <abbr
+                                title="Model Context Protocol - A standard for connecting AI models to data">MCP</abbr>
+                            are reducing fragmentation</li>
+                        <li><strong>Specialization:</strong> Tools are focusing on specific use cases (<abbr
+                                title="Retrieval-Augmented Generation - Finding data to answer questions">RAG</abbr>,
+                            multi-agent, etc.)</li>
+                        <li><strong>Production-readiness:</strong> Frameworks are adding monitoring, debugging, and
+                            deployment features</li>
+                        <li><strong>Interoperability:</strong> Tools are designed to work together, not compete</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="next-steps">
+                <h3>But Is It Safe?</h3>
+                <p>Now that you know how to build agents, we need to talk about keeping them under control. Let's
+                    explore the essential guardrails for safe AI.</p>
+                <a href="guardrails.html" class="next-btn">Explore Guardrails & Safety →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Navigation -->
+    <nav class="page-nav">
+        <div class="container">
+            <div class="page-nav-content">
+                <a href="index.html" class="nav-previous">← Previous: Agent Types</a>
+                <a href="index.html" class="nav-home">Home</a>
+                <a href="guardrails.html" class="nav-next">Next: Guardrails & Safety →</a>
+            </div>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

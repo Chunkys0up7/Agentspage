@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behind the Scenes - How an AI Agent Built This</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">AI Agents Guide</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Agent Types</a></li>
+                <li><a href="tools.html">Tools & Frameworks</a></li>
+                <li><a href="guardrails.html">Guardrails & Safety</a></li>
+                <li><a href="behind-scenes.html" class="active">Behind the Scenes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in">Behind the Scenes: An AI Agent at Work</h1>
+            <p class="subtitle fade-in-delay">Watch how an AI agent built this entire presentation - from concept to
+                code</p>
+
+            <div class="code-animation">
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="window-title">agent-builder.js</span>
+                    </div>
+                    <div class="code-content">
+                        <pre id="typing-code"><code>// AI Agent analyzing requirements...
+function buildPresentation(userRequest) {
+  const requirements = analyzeRequest(userRequest);
+  const design = createDesign(requirements);
+  const code = generateCode(design);
+  return iterateBasedOnFeedback(code);
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Journey Section -->
+    <section class="development-journey">
+        <div class="container">
+            <h2 class="section-title">The Development Journey</h2>
+            <p class="section-subtitle">5 iterations from initial concept to complete presentation</p>
+
+            <div class="journey-controls">
+                <button class="demo-btn" onclick="startDevelopmentWalkthrough()">Watch Development Process</button>
+            </div>
+
+            <div class="timeline-container" id="timeline-container">
+                <!-- Timeline iterations will be populated here -->
+            </div>
+
+            <div class="progress-container" style="display: none;" id="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="timeline-progress"></div>
+                </div>
+                <div class="progress-label" id="progress-label">Iteration 0 of 5</div>
+            </div>
+
+            <div class="journey-controls" style="display: none;" id="replay-controls">
+                <button class="control-btn secondary" onclick="replayDevelopment()">Replay Development</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agent Decision Making Section -->
+    <section class="decision-section">
+        <div class="container">
+            <h2 class="section-title">Agent Decision-Making</h2>
+            <p class="section-subtitle">Click on decision nodes to see the reasoning process</p>
+
+            <div class="decision-tree">
+                <div class="decision-root">
+                    <div class="decision-node root-node">
+                        <div class="node-icon">🎯</div>
+                        <h3>Build Interactive AI Agent Guide</h3>
+                    </div>
+                </div>
+
+                <div class="decision-branches">
+                    <div class="decision-branch">
+                        <div class="decision-node design-node" onclick="toggleDecisionNode('framework')">
+                            <div class="node-icon">🔧</div>
+                            <h4>Framework Choice</h4>
+                            <p class="node-question">React/Vue or Vanilla JS?</p>
+                            <span class="expand-indicator">+</span>
+                        </div>
+                        <div class="decision-details" id="decision-framework">
+                            <div class="decision-chosen">Chosen: Vanilla JavaScript</div>
+                            <div class="decision-reasoning">
+                                <strong>Reasoning:</strong>
+                                <ul>
+                                    <li>Simpler to understand for non-technical audience</li>
+                                    <li>No build step or dependencies required</li>
+                                    <li>Better for educational content (see actual code)</li>
+                                    <li>Faster load times for presentation</li>
+                                </ul>
+                            </div>
+                            <div class="alternatives">
+                                <strong>Alternatives Considered:</strong> React, Vue.js
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="decision-branch">
+                        <div class="decision-node design-node" onclick="toggleDecisionNode('colors')">
+                            <div class="node-icon">🎨</div>
+                            <h4>Color Scheme</h4>
+                            <p class="node-question">Vibrant or Professional?</p>
+                            <span class="expand-indicator">+</span>
+                        </div>
+                        <div class="decision-details" id="decision-colors">
+                            <div class="decision-chosen">Chosen: Professional Blues</div>
+                            <div class="decision-reasoning">
+                                <strong>Reasoning:</strong>
+                                <ul>
+                                    <li>User feedback: "looks unprofessional"</li>
+                                    <li>Corporate-appropriate presentation</li>
+                                    <li>Blue conveys trust and technology</li>
+                                    <li>Dark gradients add sophistication</li>
+                                </ul>
+                            </div>
+                            <div class="alternatives">
+                                <strong>Initial Approach:</strong> Vibrant purple gradients (667eea → 764ba2)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="decision-branch">
+                        <div class="decision-node ux-node" onclick="toggleDecisionNode('interaction')">
+                            <div class="node-icon">💡</div>
+                            <h4>Demo Interaction</h4>
+                            <p class="node-question">Text input or Pre-populated?</p>
+                            <span class="expand-indicator">+</span>
+                        </div>
+                        <div class="decision-details" id="decision-interaction">
+                            <div class="decision-chosen">Chosen: Pre-populated Walkthroughs</div>
+                            <div class="decision-reasoning">
+                                <strong>Reasoning:</strong>
+                                <ul>
+                                    <li>User feedback: "show the path agents would take"</li>
+                                    <li>Better for live presentations (no typing)</li>
+                                    <li>Consistent output every time</li>
+                                    <li>Visual progression shows agent thinking</li>
+                                </ul>
+                            </div>
+                            <div class="alternatives">
+                                <strong>Initial Approach:</strong> Text input fields for custom scenarios
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="decision-branch">
+                        <div class="decision-node technical-node" onclick="toggleDecisionNode('explanations')">
+                            <div class="node-icon">📖</div>
+                            <h4>Concept Explanation</h4>
+                            <p class="node-question">Technical or Analogies?</p>
+                            <span class="expand-indicator">+</span>
+                        </div>
+                        <div class="decision-details" id="decision-explanations">
+                            <div class="decision-chosen">Chosen: Real-world Analogies</div>
+                            <div class="decision-reasoning">
+                                <strong>Reasoning:</strong>
+                                <ul>
+                                    <li>Target audience: "non-technical, AI-curious"</li>
+                                    <li>Analogies build mental models quickly</li>
+                                    <li>Examples: "like a thermostat", "like a GPS"</li>
+                                    <li>More memorable than technical definitions</li>
+                                </ul>
+                            </div>
+                            <div class="alternatives">
+                                <strong>Alternatives Considered:</strong> Academic definitions, technical specs
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Evolution Section -->
+    <section class="evolution-section">
+        <div class="container">
+            <h2 class="section-title">Design Evolution</h2>
+            <p class="section-subtitle">See how the project changed based on feedback</p>
+
+            <div class="evolution-grid">
+                <!-- Hero Color Scheme Evolution -->
+                <div class="evolution-card">
+                    <h3>Hero Color Scheme</h3>
+                    <div class="evolution-tabs">
+                        <button class="tab-btn active" onclick="switchTab('hero', 'before')">Before</button>
+                        <button class="tab-btn" onclick="switchTab('hero', 'after')">After</button>
+                    </div>
+                    <div class="code-comparison">
+                        <div class="code-version active" id="hero-before">
+                            <div class="code-label">Vibrant Purple Gradient</div>
+                            <div class="visual-preview"
+                                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 60px; border-radius: 8px; margin-bottom: 1rem;">
+                            </div>
+                            <div class="feedback-note">User: "looks unprofessional"</div>
+                        </div>
+                        <div class="code-version" id="hero-after">
+                            <div class="code-label">Professional Dark Blue</div>
+                            <div class="visual-preview"
+                                style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); height: 60px; border-radius: 8px; margin-bottom: 1rem;">
+                            </div>
+                            <div class="feedback-note success">Result: Corporate-appropriate design</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo Interaction Evolution -->
+                <div class="evolution-card">
+                    <h3>Demo Interaction Model</h3>
+                    <div class="evolution-tabs">
+                        <button class="tab-btn active" onclick="switchTab('demo', 'before')">Before</button>
+                        <button class="tab-btn" onclick="switchTab('demo', 'after')">After</button>
+                    </div>
+                    <div class="code-comparison">
+                        <div class="code-version active" id="demo-before">
+                            <div class="code-label">Text Input Form</div>
+                            <div class="visual-preview"
+                                style="border: 2px solid #e2e8f0; padding: 1rem; border-radius: 8px; background: #f8fafc; color: #64748b;">
+                                [ Enter scenario... ] [Run]
+                            </div>
+                            <div class="feedback-note">User: "show the path agents take"</div>
+                        </div>
+                        <div class="code-version" id="demo-after">
+                            <div class="code-label">Pre-populated Walkthrough</div>
+                            <div class="visual-preview"
+                                style="border: 2px solid #10b981; padding: 1rem; border-radius: 8px; background: #ecfdf5; color: #065f46;">
+                                ▶ Playing: Email Analysis (Step 2/4)
+                            </div>
+                            <div class="feedback-note success">Result: Better for presentations</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animations Refinement -->
+                <div class="evolution-card">
+                    <h3>Animation Approach</h3>
+                    <div class="evolution-tabs">
+                        <button class="tab-btn active" onclick="switchTab('anim', 'before')">Before</button>
+                        <button class="tab-btn" onclick="switchTab('anim', 'after')">After</button>
+                    </div>
+                    <div class="code-comparison">
+                        <div class="code-version active" id="anim-before">
+                            <div class="code-label">Bouncing Animations</div>
+                            <div class="visual-preview"
+                                style="display: flex; justify-content: center; align-items: center; height: 60px;">
+                                <div style="font-size: 2rem; animation: bounce 1s infinite;">🏀</div>
+                            </div>
+                            <div class="feedback-note">User: "tidy up a bit"</div>
+                        </div>
+                        <div class="code-version" id="anim-after">
+                            <div class="code-label">Subtle Transitions</div>
+                            <div class="visual-preview"
+                                style="display: flex; justify-content: center; align-items: center; height: 60px;">
+                                <div style="font-size: 2rem; opacity: 1; transition: opacity 1s;">✨</div>
+                            </div>
+                            <div class="feedback-note success">Result: Professional polish</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agent Types in Action Section -->
+    <section class="agent-examples-section">
+        <div class="container">
+            <h2 class="section-title">Agent Types in Action</h2>
+            <p class="section-subtitle">See which agent behaviors were used to build this project</p>
+
+            <div class="agent-examples-grid">
+                <!-- Model-Based Agent -->
+                <div class="agent-example-card">
+                    <div class="example-header">
+                        <div class="agent-icon">🟢</div>
+                        <h3>Model-Based Agent</h3>
+                    </div>
+                    <div class="example-behavior">
+                        <strong>Behavior:</strong> Maintains context and remembers previous interactions
+                    </div>
+                    <div class="example-usage">
+                        <strong>How it was used:</strong>
+                        <p>Remembered your preference for "professional design" across all 5 iterations. When creating
+                            the tools page and guardrails page, automatically applied the refined color scheme without
+                            needing to be told again.</p>
+                    </div>
+                </div>
+
+                <!-- Goal-Based Agent -->
+                <div class="agent-example-card">
+                    <div class="example-header">
+                        <div class="agent-icon">🎯</div>
+                        <h3>Goal-Based Agent</h3>
+                    </div>
+                    <div class="example-behavior">
+                        <strong>Behavior:</strong> Plans steps to achieve specific objectives
+                    </div>
+                    <div class="example-usage">
+                        <strong>How it was used:</strong>
+                        <p>Broke down "create interactive presentation" into concrete steps: design hero section, create
+                            agent cards, build demos, add comparison features. Each iteration moved closer to the end
+                            goal.</p>
+                    </div>
+                </div>
+
+                <!-- Learning Agent -->
+                <div class="agent-example-card">
+                    <div class="example-header">
+                        <div class="agent-icon">📈</div>
+                        <h3>Learning Agent</h3>
+                    </div>
+                    <div class="example-behavior">
+                        <strong>Behavior:</strong> Improves based on feedback
+                    </div>
+                    <div class="example-usage">
+                        <strong>How it was used:</strong>
+                        <p>Adapted design approach after each feedback round. Initial vibrant colors were rejected →
+                            learned that professional tone was needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section class="conclusion-section">
+        <div class="container">
+            <h2>From Conversation to Code</h2>
+            <div class="final-cta">
+                <h3>Now you've seen an agent in action</h3>
+                <p>Ready to explore how different agent types work?</p>
+                <a href="index.html" class="demo-btn">Explore Agent Types</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Navigation -->
+    <nav class="page-nav">
+        <div class="container">
+            <div class="page-nav-content">
+                <a href="guardrails.html" class="nav-previous">← Previous: Guardrails & Safety</a>
+                <a href="index.html" class="nav-home">Home</a>
+                <span class="nav-disabled">End of Guide</span>
+            </div>
+        </div>
+    </nav>
+
+    <script src="behind-scenes.js"></script>
+</body>
+
+</html>
