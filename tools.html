@@ -399,7 +399,50 @@
     <!-- Choosing the Right Tool -->
     <section class="decision-guide">
         <div class="container">
-            <h2 class="section-title">Which Tool Should You Use?</h2>
+            <h2 class="section-title">Choosing the Right Framework</h2>
+            <p class="section-subtitle">A quick comparison to help you pick the best tool for your needs</p>
+
+            <!-- Comparison Matrix -->
+            <div class="framework-matrix-container">
+                <table class="framework-matrix">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>LangChain</th>
+                            <th>AutoGen</th>
+                            <th>CrewAI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Best For</td>
+                            <td>Orchestration & Chains</td>
+                            <td>Multi-Agent Conversations</td>
+                            <td>Role-Playing Squads</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Complexity</td>
+                            <td><span class="complexity high">High (Powerful)</span></td>
+                            <td><span class="complexity medium">Medium</span></td>
+                            <td><span class="complexity low">Low (Easy Start)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Human-in-Loop</td>
+                            <td>Manual Setup</td>
+                            <td>Native Support</td>
+                            <td>Native Support</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Production Ready</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td>⭐⭐⭐</td>
+                            <td>⭐⭐⭐⭐</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="text-align: center; margin: 3rem 0 1.5rem;">Common Scenarios</h3>
 
             <div class="decision-grid">
                 <div class="decision-card">
@@ -460,19 +503,28 @@
                 <p>These tools represent the current state of AI agent development, but the field is evolving rapidly.
                     New frameworks emerge regularly, and existing tools are constantly adding features.</p>
 
-                <div class="key-trends">
-                    <h3>Current Trends:</h3>
-                    <ul>
-                        <li><strong>Standardization:</strong> Protocols like <abbr
-                                title="Model Context Protocol - A standard for connecting AI models to data">MCP</abbr>
-                            are reducing fragmentation</li>
-                        <li><strong>Specialization:</strong> Tools are focusing on specific use cases (<abbr
-                                title="Retrieval-Augmented Generation - Finding data to answer questions">RAG</abbr>,
-                            multi-agent, etc.)</li>
-                        <li><strong>Production-readiness:</strong> Frameworks are adding monitoring, debugging, and
-                            deployment features</li>
-                        <li><strong>Interoperability:</strong> Tools are designed to work together, not compete</li>
-                    </ul>
+                <div class="trends-grid">
+                    <div class="trend-card">
+                        <div class="trend-icon">📏</div>
+                        <h4>Standardization</h4>
+                        <p>Protocols like <abbr title="Model Context Protocol">MCP</abbr> are minimizing fragmentation.
+                        </p>
+                    </div>
+                    <div class="trend-card">
+                        <div class="trend-icon">🎯</div>
+                        <h4>Specialization</h4>
+                        <p>Tools focusing on specific niches like RAG, coding, or data analysis.</p>
+                    </div>
+                    <div class="trend-card">
+                        <div class="trend-icon">🚀</div>
+                        <h4>Production Ready</h4>
+                        <p>Better monitoring, debugging, and deployment tools arriving daily.</p>
+                    </div>
+                    <div class="trend-card">
+                        <div class="trend-icon">🔗</div>
+                        <h4>Interoperability</h4>
+                        <p>Frameworks designing for collaboration rather than lock-in.</p>
+                    </div>
                 </div>
             </div>
 

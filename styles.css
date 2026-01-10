@@ -3115,12 +3115,13 @@ abbr[title]:hover::after {
     font-weight: bold;
 }
 
-.flow-step+.flow-step::before {
-    content: "↓";
-    left: 50%;
-    top: -1.5rem;
-    transform: translateX(-50%);
-}
+@media (max-width: 768px) {
+    .flow-step+.flow-step::before {
+        content: "↓";
+        left: 50%;
+        top: -1.5rem;
+        transform: translateX(-50%);
+    }
 }
 
 /* Guardrails Layers Layout Fixes */
@@ -3130,4 +3131,160 @@ abbr[title]:hover::after {
     gap: 1rem;
     max-width: 800px;
     margin: 3rem auto;
+}
+
+/* Phase 5: Framework Comparison Matrix */
+.framework-matrix-container {
+    overflow-x: auto;
+    margin: 3rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: white;
+}
+
+.framework-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.framework-matrix th,
+.framework-matrix td {
+    padding: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.framework-matrix th {
+    background: var(--bg-light);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.framework-matrix tr:last-child td {
+    border-bottom: none;
+}
+
+.feature-name {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.complexity.high {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.complexity.medium {
+    color: #d97706;
+    font-weight: 600;
+}
+
+.complexity.low {
+    color: #059669;
+    font-weight: 600;
+}
+
+/* Phase 5: Case Study Cards */
+.case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.case-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+
+.case-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.case-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.case-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.case-desc {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.case-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.case-steps li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.case-steps li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.case-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--bg-light);
+    color: var(--text-light);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+}
+
+/* Phase 5: Trends Grid (Tools Page) */
+.trends-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.trend-card {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.trend-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.trend-card h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
+.trend-card p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.4;
 }
